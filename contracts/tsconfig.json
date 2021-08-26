@@ -4,7 +4,16 @@
         "module": "commonjs",
         "strict": true,
         "esModuleInterop": true,
-        "outDir": "dist"
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "@typechained": [
+                "typechained/index"
+            ],
+        },
+        "typeRoots": [
+            "node_modules/@types"
+        ]
     },
     "include": [
         "./scripts",

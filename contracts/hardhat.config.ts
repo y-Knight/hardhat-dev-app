@@ -1,6 +1,12 @@
-import { task } from 'hardhat/config'
-import '@nomiclabs/hardhat-waffle'
+import { task, HardhatUserConfig } from 'hardhat/config'
 import { HardhatArguments, HardhatRuntimeEnvironment } from 'hardhat/types'
+
+import '@nomiclabs/hardhat-ethers'
+import '@nomiclabs/hardhat-waffle'
+import '@typechain/hardhat'
+import '@typechain/hardhat/dist/type-extensions'
+import 'tsconfig-paths/register'
+
 
 task("accounts", "Prints the list of accounts", async (args: HardhatArguments, hre: HardhatRuntimeEnvironment): Promise<void> => {
   const accounts = await hre.ethers.getSigners();
@@ -10,6 +16,24 @@ task("accounts", "Prints the list of accounts", async (args: HardhatArguments, h
   }
 })
 
-module.exports = {
-  solidity: "0.8.4",
-};
+const config: HardhatUserConfig = {
+  paths: {
+    sources: './contracts',
+  },
+  solidity: {
+    version: '0.8.4',
+    settings: {
+      outputSelection: {
+        "*": {
+          "*": ["storageLayout"]
+        }
+      }
+    }
+  },
+  typechain: {
+    outDir: 'typechained',
+    target: 'ethers-v5',
+  }
+}
+
+export default config

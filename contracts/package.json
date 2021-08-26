@@ -1,8 +1,12 @@
 {
   "name": "hardhat-project",
   "devDependencies": {
+    "@defi-wonderland/smock": "^2.0.1",
+    "@nomiclabs/ethereumjs-vm": "^4.2.2",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@typechain/ethers-v5": "^7.0.1",
+    "@typechain/hardhat": "^2.3.0",
     "@types/chai": "^4.2.21",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.7.1",
@@ -11,6 +15,8 @@
     "ethers": "^5.4.5",
     "hardhat": "^2.6.1",
     "ts-node": "^10.2.1",
+    "tsconfig-paths": "^3.11.0",
+    "typechain": "^5.1.2",
     "typescript": "^4.3.5"
   },
   "scripts": {
@@ -18,7 +24,6 @@
     "console": "hardhat console"
   },
   "dependencies": {
-    "@eth-optimism/smock": "^1.1.10",
     "@openzeppelin/contracts": "^4.3.0"
   }
 }
