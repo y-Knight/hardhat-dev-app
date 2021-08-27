@@ -6,4 +6,4 @@ RUN apk update && \
 RUN yarn install && yarn add -D \
     hardhat
 
-WORKDIR /contracts
+WORKDIR /hardhat_contracts
