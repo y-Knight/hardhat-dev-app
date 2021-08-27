@@ -1,12 +1,12 @@
 version: '3.8'
 services:
-  hardhat:
-    container_name: contracts_container
-    build: ./docker/contracts
+  hardhat_contracts:
+    container_name: hardhat_contracts_container
+    build: ./docker/hardhat_contracts
     ports:
       - 13040:3000
     volumes:
-      - ./contracts:/contracts
+      - ./hardhat_contracts:/hardhat_contracts
     tty: true
     environment:
       - TZ=Asia/Tokyo

@@ -3,12 +3,14 @@
 ## contracts_container
 
 ```
+hardhat compile
 hardhat test
 hardhat console
 ```
 
 @openzeppelin/contracts
-@eth-optimism/smock
+@defi-wonderland/smock
+and typechain installed
 
 ## app_container
 
